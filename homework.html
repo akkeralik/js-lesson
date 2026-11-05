@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>Калькулятор на JavaScript</h1>
+    <p>Результат вычисления появится в окне браузера.</p>
+
+    <script>
+        function calculator(a, b, operation) {
+            if (operation === "+") {
+                return a + b;
+            } else if (operation === "-") {
+                return a - b;
+            } else if (operation === "*") {
+                return a * b;
+            } else if (operation === "/") {
+                if (b === 0) {
+                    return "На ноль делить нельзя";
+                }
+                return a / b;
+            } else {
+                return "Неизвестная операция";
+            }
+        }
+
+        let a = Number(prompt("Введи первое число:"));
+        let b = Number(prompt("Введи второе число:"));
+        let operation = prompt("Введи операцию (+, -, *, /):");
+
+        if (isNaN(a) || isNaN(b)) {
+            alert("Ошибка! Нужно ввести числа.");
+        } else {
+            let result = calculator(a, b, operation);
+
+            console.log("Результат: " + result);
+            alert("Результат: " + result);
+        }
+    </script>
+</body>
+</html>
